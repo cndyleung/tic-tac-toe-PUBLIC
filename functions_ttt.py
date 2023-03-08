@@ -1,3 +1,4 @@
+# The following functions create the game tic-tac-toe
 def initialise_board():
     board = [".", ".", ".", ".", ".", ".", ".", ".", "."]
 
