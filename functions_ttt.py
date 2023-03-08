@@ -1,5 +1,18 @@
-# The following functions create the game tic-tac-toe
 def initialise_board():
+    """ The function initialise_board takes in a list of nine items that each contain a . as a str to represent
+    an initially empty cell on the board
+
+    Arguments
+    _________
+    No inputs
+
+    Returns
+    _______
+    Output 1: a list representing the board
+
+    Notes
+    _____
+    None """
     board = [".", ".", ".", ".", ".", ".", ".", ".", "."]
 
     return board
