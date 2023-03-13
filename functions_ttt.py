@@ -13,12 +13,27 @@ def initialise_board():
     Notes
     _____
     None """
+
     board = [".", ".", ".", ".", ".", ".", ".", ".", "."]
 
     return board
 
 
 def display_board(board):
+    """ The function display_board displays to screen the 3 x 3 board
+
+    Arguments
+    _________
+    Input 1: a list representing the board
+
+    Returns
+    _______
+    No outputs
+
+    Notes
+    _____
+    None """
+
     print(board[0:3])
     print(board[3:6])
     print(board[6:9])
@@ -27,6 +42,21 @@ def display_board(board):
 
 
 def get_current_turn_number(board):
+    """ The function get_turn_number uses the board to determine the current number by calculating the number of
+        non-empty cells
+
+    Arguments
+    _________
+    Input 1: a list representing the board
+
+    Returns
+    _______
+    Output 1: an int equal to the current turn number
+
+    Notes
+    _____
+    None """
+
     turn = 1
     for i in range(len(board)):
         if board[i] != ".":
@@ -36,6 +66,29 @@ def get_current_turn_number(board):
 
 
 def get_current_player(board):
+    """The function get_current_player uses the board to determine the current player which can be represented by an 'X'
+       for player 1 (who always goes on the first turn) or an 'O' for player 2
+
+    Arguments
+    _________
+    Input 1: a list representing the board
+
+    Returns
+    _______
+    Output 1: a str representing the current player
+
+    Notes
+    _____
+    None
+
+    Examples
+    ________
+    board = [’.’, ’.’, ’.’, ’.’, ’.’, ’.’, ’.’, ’.’, ’.’]
+    Current player: X
+
+    board = [’O’, ’.’, ’X’, ’.’, ’X’, ’.’, ’.’, ’.’, ’.’]
+    Current player: O """
+
     turn = get_current_turn_number(board)
     if turn % 2 != 0:
         current_player = "X"
@@ -46,6 +99,7 @@ def get_current_player(board):
 
 
 def play_turn(board, row, column):
+
     validity = False
     if (1 <= row <= 3) and (1 <= column <= 3):
         current_player = get_current_player(board)
@@ -61,6 +115,7 @@ def play_turn(board, row, column):
 
 
 def check_draw(board):
+
     draw = True
     count = 0
     for i in range(len(board)):
@@ -89,6 +144,7 @@ def check_draw(board):
 
 
 def check_win(board):
+
     win = False
     winner = None
 
@@ -121,6 +177,7 @@ def check_win(board):
 
 
 def play_game():
+
     board = initialise_board()
 
     display_board(board)
