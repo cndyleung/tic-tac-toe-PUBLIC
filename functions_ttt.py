@@ -99,6 +99,22 @@ def get_current_player(board):
 
 
 def play_turn(board, row, column):
+    """ The function play_turn attempts to play a turn, using a provided row and column, on the board
+
+     Arguments
+     _________
+     Input 1: a list representing the board
+     Input 2: an int representing the row number of the requested move (1 for top, 2 for middle, 3 for bottom)
+     Input 3: an int representing the column number of the requested move (1 for the left, 2 for the middle, 3 for the
+              right)
+
+     Returns
+     _______
+     Output 1: a list representing the requested move was invalid, this will be identical to Input 1
+
+     Notes
+     _____
+     None """
 
     validity = False
     if (1 <= row <= 3) and (1 <= column <= 3):
@@ -115,6 +131,19 @@ def play_turn(board, row, column):
 
 
 def check_draw(board):
+    """ The function check_draw determines if the game has ended in a draw
+
+     Arguments
+     _________
+     Input 1: a list representing the board
+
+     Returns
+     _______
+     Output 1: a bool representing if the game is a draw (True) or not (False)
+
+     Notes
+     _____
+     None """
 
     draw = True
     count = 0
@@ -144,6 +173,21 @@ def check_draw(board):
 
 
 def check_win(board):
+    """ The function check_win determines if there is a winning player based on the board, and if so which player has
+        won
+
+     Arguments
+     _________
+     Input 1: a list representing the board
+
+     Returns
+     _______
+     Output 1: a bool representing if the game has been won (True) or not (False)
+     Output 2: a Nonetype if there is no winner, or a str representing the winning player (X or O) if there is one
+
+     Notes
+     _____
+     None """
 
     win = False
     winner = None
@@ -177,6 +221,19 @@ def check_win(board):
 
 
 def play_game():
+    """ The function play_game plays the game from start to finish
+
+     Arguments
+     _________
+     No inputs
+
+     Returns
+     _______
+     No outputs
+
+     Notes
+     _____
+     None """
 
     board = initialise_board()
 
