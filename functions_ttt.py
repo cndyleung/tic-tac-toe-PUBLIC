@@ -14,13 +14,14 @@ def initialise_board():
     _____
     None """
 
+    # Create a list and assign it to a variable named board.
     board = [".", ".", ".", ".", ".", ".", ".", ".", "."]
 
     return board
 
 
 def display_board(board):
-    """ The function display_board displays to screen the 3 x 3 board
+    """ The function display_board displays to screen the 3 x 3 board using the print function
 
     Arguments
     _________
@@ -34,6 +35,7 @@ def display_board(board):
     _____
     None """
 
+    # Split the list into three rows by indexing and printing three elements at a time.
     print(board[0:3])
     print(board[3:6])
     print(board[6:9])
@@ -57,6 +59,8 @@ def get_current_turn_number(board):
     _____
     None """
 
+    # This for loop iterates through each element in the list to find how many non-empty elements there are to determine
+    # the turn. If the board is fully empty then the turn number is 1.
     turn = 1
     for i in range(len(board)):
         if board[i] != ".":
@@ -66,8 +70,8 @@ def get_current_turn_number(board):
 
 
 def get_current_player(board):
-    """The function get_current_player uses the board to determine the current player which can be represented by an 'X'
-       for player 1 (who always goes on the first turn) or an 'O' for player 2
+    """ The function get_current_player uses the board to determine the current player which can be represented by an
+    'X' for player 1 (who always goes on the first turn) or an 'O' for player 2
 
     Arguments
     _________
@@ -89,9 +93,15 @@ def get_current_player(board):
     board = [’O’, ’.’, ’X’, ’.’, ’X’, ’.’, ’.’, ’.’, ’.’]
     Current player: O """
 
+    # Call the function get_turn_number to determine the turn number.
     turn = get_current_turn_number(board)
+
+    # If the turn is odd the current player is X - Use the modulus function to determine if it is odd (e.g. the
+    # remainder of the turn divided by 2 is not equal to zero).
     if turn % 2 != 0:
         current_player = "X"
+
+    # If the turn is even the current player is O
     else:
         current_player = "O"
 
@@ -110,16 +120,25 @@ def play_turn(board, row, column):
 
      Returns
      _______
-     Output 1: a list representing the requested move was invalid, this will be identical to Input 1
+     Output 1: a list representing the updated board. If the requested move was invalid, this will be identical to
+     Input 1
 
      Notes
      _____
      None """
 
+    # Initialise the validity as false.
     validity = False
+
+    # Requested row and column cannot be less than 1 or more than 3 to be valid.
     if (1 <= row <= 3) and (1 <= column <= 3):
         current_player = get_current_player(board)
+
+        # Translate the requested row and column position in the 3 x 3 board into an index in the list.
         position = 3 * (row - 1) + column - 1
+
+        # The position of the requested move must be empty to be valid. The empty cell is replaced with the current
+        # player if the move is valid.
         if board[position] == ".":
             board[position] = current_player
             validity = True
@@ -145,17 +164,23 @@ def check_draw(board):
      _____
      None """
 
+    # Initialise the draw as true.
     draw = True
+
+    # Count determines the amount of empty cells on the board.
     count = 0
     for i in range(len(board)):
         if board[i] == ".":
             count += 1
 
+    # If the count is more than 0, the draw is false and immediately returned because more moves can be made to
+    # potentially win.
     if count > 0:
         draw = False
 
         return draw
 
+    # This for loop checks for the 8 possible winning patterns. If one of them are true, then the draw is false.
     for i in range(0, 3):
         if board[3 * i] == board[3 * i + 1] == board[3 * i + 2]:
             draw = False
@@ -183,18 +208,24 @@ def check_win(board):
      Returns
      _______
      Output 1: a bool representing if the game has been won (True) or not (False)
-     Output 2: a Nonetype if there is no winner, or a str representing the winning player (X or O) if there is one
+     Output 2: a None-type if there is no winner, or a str representing the winning player (X or O) if there is one
 
      Notes
      _____
      None """
 
+    # Initialise the win as false and the winner as none.
     win = False
     winner = None
 
+    # This for loop checks for 1 of the 8 winning patterns and makes sure that it is a valid win by all having the same
+    # element (not a '.') and by not being a none-type .
     for i in range(0, 3):
         if ((board[3 * i] == board[3 * i + 1] == board[3 * i + 2] != '.')
                 and (board[3 * i] is not None)):
+
+            # Once a win has been found the conditional loop breaks and stores the result in the variables win and
+            # winner and skips the remaining conditionals to improve efficiency.
             win = True
             winner = board[3 * i]
             break
@@ -212,6 +243,7 @@ def check_win(board):
             winner = board[4]
             break
 
+    # Call the check draw function. If the draw is true, then the win is false and the winner is none.
     draw = check_draw(board)
     if draw is True:
         win = False
@@ -233,8 +265,11 @@ def play_game():
 
      Notes
      _____
-     None """
+     No inputs or outputs as this function handles user interaction and provides the game with a very basic form of user
+      interface"""
 
+    # Call the functions initialise_board, display_board, get_turn_number and get_turn_player to display the current
+    # board, current turn and current player on each turn.
     board = initialise_board()
 
     display_board(board)
@@ -245,18 +280,24 @@ def play_game():
     current_player = get_current_player(board)
     print("Current player is: " + str(current_player))
 
+    # Use the input command to obtain from a user the desired row and column number for their turn.
     row = input("Enter row: ")
     column = input("Enter column: ")
 
+    # While the str input of the row and column is not a digit (e.g. 'e'), prompt the user to enter the values again.
     while (not row.isdigit()) or (not column.isdigit()):
         row = input("Enter row again: ")
         column = input("Enter column again: ")
 
+    # Typecast the row and column values into int since the input command assigns values as str in variables.
     row = int(row)
     column = int(column)
 
+    # Call the play_turn function to determine whether the row and column values obtained from the user are valid and to
+    # store the updated board (only if move is valid).
     board, validity = play_turn(board, row, column)
 
+    # If the requested turn is invalid the process is repeated until the game received a valid turn.
     while validity is False:
         row = input("Enter row again: ")
         column = input("Enter column again: ")
@@ -270,11 +311,14 @@ def play_game():
 
         board, validity = play_turn(board, row, column)
 
+    # Check whether the draw or win is true by calling both functions.
     draw = check_draw(board)
     win, winner = check_win(board)
 
+    # Display the updated board with the valid move on the screen.
     display_board(board)
 
+    # Repeatedly take turns until either the game is won or ends in a draw (copy and paste the code from above).
     while (draw is False) and (win is False):
         turn = get_current_turn_number(board)
         print("Current turn number is: " + str(turn))
@@ -312,6 +356,7 @@ def play_game():
 
         display_board(board)
 
+    # Final result and final board is displayed. If the final result is a win, also display the winning player.
     if draw is True:
         print("Game is a Draw :(")
         display_board(board)
