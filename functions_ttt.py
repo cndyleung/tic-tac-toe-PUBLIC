@@ -57,7 +57,7 @@ def get_current_turn_number(board):
 
     Notes
     _____
-    None """
+    The first turn number is always 1 (e.g. when there is a empty board) """
 
     # This for loop iterates through each element in the list to find how many non-empty elements there are to determine
     # the turn. If the board is fully empty then the turn number is 1.
