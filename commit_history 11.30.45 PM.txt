@@ -1,0 +1,109 @@
+commit 18441a23e94d79fb625f74c4c8e526f691b42060
+Merge: c44ec1c 7418a8d
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Wed Mar 15 23:27:02 2023 +1300
+
+    Deletion
+
+commit c44ec1cda1424984548fd5a8d30307e6029ea8bb
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Wed Mar 15 23:25:00 2023 +1300
+
+    Files deleted
+
+commit 7418a8df5ad4771a6d8bd634031641361df49a08
+Author: cndyleung <127263769+cndyleung@users.noreply.github.com>
+Date:   Wed Mar 15 23:23:52 2023 +1300
+
+    Delete commit_history.txt
+
+commit d9a305146e1f2cb5b9c9d993cd51e91bff3c3e50
+Author: cndyleung <127263769+cndyleung@users.noreply.github.com>
+Date:   Wed Mar 15 23:23:38 2023 +1300
+
+    Delete .DS_Store
+
+commit 4817ef43cc48ae1610efba1a4c49f21311bd3357
+Author: cndyleung <127263769+cndyleung@users.noreply.github.com>
+Date:   Wed Mar 15 23:23:24 2023 +1300
+
+    Delete __pycache__ directory
+
+commit ed6d30dea7a463248bec1a7231d743df13658df5
+Merge: 72b2477 3fc3efe
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Wed Mar 15 23:16:30 2023 +1300
+
+    task1.py deleted
+
+commit 72b247794a8997ca7cadef5c9d9dc8ddd0c4e07f
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Wed Mar 15 23:11:08 2023 +1300
+
+    Minor tweaks to Lab 1
+
+commit 18741c4a5fdb4963529b4f8a67bf6ca763aa0962
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Wed Mar 15 23:07:35 2023 +1300
+
+    Files deleted
+
+commit d116aaa6049a22aacec1b0e81e377dd371a7c0ff
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Wed Mar 15 23:03:11 2023 +1300
+
+    Final changes to Lab 1
+
+commit 3fc3efe78090ff338808fab4d14cb9e6f9847243
+Author: cndyleung <127263769+cndyleung@users.noreply.github.com>
+Date:   Wed Mar 15 14:10:12 2023 +1300
+
+    Delete task1.py
+
+commit dc78dafe46d28f411d1aa0d552a14f37b36b98bc
+Author: Cindy Leung <cindy@wifi-172-23-181-65.uoa-wifi.auckland.ac.nz>
+Date:   Tue Mar 14 16:35:01 2023 +1300
+
+    Unit tests created for Task 1 functions
+
+commit faa3b191e6a083ea0594037fce25d2d8c14ad70e
+Author: Cindy Leung <cindy@wifi-172-23-181-65.uoa-wifi.auckland.ac.nz>
+Date:   Tue Mar 14 16:29:07 2023 +1300
+
+    Test file added
+
+commit bc2249b9ff747446ba47ac5167c15cccae4abee4
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Tue Mar 14 02:22:08 2023 +1300
+
+    Internal comments to explain code chunks written
+
+commit a448e921c3e4f2fab593b52bc64d0dce049c7d85
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Tue Mar 14 01:26:41 2023 +1300
+
+    Docstrings added to functions 4, 5, 6, 7 and 8
+
+commit f3744092840879ff097b125af216c1b1d4db861a
+Author: Cindy Leung <cindy@Cindys-MacBook-Air.local>
+Date:   Tue Mar 14 01:08:27 2023 +1300
+
+    Docstring added to functions1, 2 and 3
+
+commit 195fb6503c1c92a3b7d56a98bd98b9e26ed14069
+Author: Cindy Leung <cindy@wifi-172-23-70-54.uoa-wifi.auckland.ac.nz>
+Date:   Wed Mar 8 14:52:59 2023 +1300
+
+    Docstring added to function1
+
+commit 500bd1f614cffafc187029241e7c841b5670a001
+Author: Cindy Leung <cindy@wifi-172-23-70-54.uoa-wifi.auckland.ac.nz>
+Date:   Wed Mar 8 14:36:50 2023 +1300
+
+    Comment made
+
+commit f6bb275e9b02ae7f709bd12758c330cd3e7872fe
+Author: cndyleung <127263769+cndyleung@users.noreply.github.com>
+Date:   Wed Mar 8 13:32:00 2023 +1300
+
+    Add files via upload
