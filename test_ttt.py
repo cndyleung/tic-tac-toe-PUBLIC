@@ -38,4 +38,4 @@ def text_check_win():
     board = ["X", "O", ".", ".", "X", "O", ".", ".", "X"]
     win, winner = check_win(board)
     assert (win is True)
-    assert (winner is "X")
+    assert (winner == "X")

@@ -1,5 +1,6 @@
 def initialise_board():
-    """ The function initialise_board takes in a list of nine items that each contain a . as a str to represent
+    """
+    The function initialise_board takes in a list of nine items that each contain a . as a str to represent
     an initially empty cell on the board
 
     Arguments
@@ -12,7 +13,8 @@ def initialise_board():
 
     Notes
     _____
-    None """
+    The list will always have nine items
+    """
 
     # Create a list and assign it to a variable named board.
     board = [".", ".", ".", ".", ".", ".", ".", ".", "."]
@@ -21,7 +23,8 @@ def initialise_board():
 
 
 def display_board(board):
-    """ The function display_board displays to screen the 3 x 3 board using the print function
+    """
+    The function display_board displays to screen the 3 x 3 board using the print function
 
     Arguments
     _________
@@ -33,7 +36,8 @@ def display_board(board):
 
     Notes
     _____
-    None """
+    None
+    """
 
     # Split the list into three rows by indexing and printing three elements at a time.
     print(board[0:3])
@@ -44,8 +48,9 @@ def display_board(board):
 
 
 def get_current_turn_number(board):
-    """ The function get_turn_number uses the board to determine the current number by calculating the number of
-        non-empty cells
+    """
+    The function get_current_turn_number uses the board to determine the current turn number by calculating the number
+    of non-empty cells
 
     Arguments
     _________
@@ -57,7 +62,8 @@ def get_current_turn_number(board):
 
     Notes
     _____
-    The first turn number is always 1 (e.g. when there is a empty board) """
+    The first turn number is always 1 (e.g. when there is an empty board)
+    """
 
     # This for loop iterates through each element in the list to find how many non-empty elements there are to determine
     # the turn. If the board is fully empty then the turn number is 1.
@@ -70,8 +76,9 @@ def get_current_turn_number(board):
 
 
 def get_current_player(board):
-    """ The function get_current_player uses the board to determine the current player which can be represented by an
-    'X' for player 1 (who always goes on the first turn) or an 'O' for player 2
+    """
+    The function get_current_player uses the board to determine the current player which can be represented by an
+    'X' for player 1 or an 'O' for player 2
 
     Arguments
     _________
@@ -83,7 +90,8 @@ def get_current_player(board):
 
     Notes
     _____
-    None
+    - Player 1 ('X') always goes on the first turn
+    - Players alternate i.e. the same player does not go twice in a row
 
     Examples
     ________
@@ -91,7 +99,8 @@ def get_current_player(board):
     Current player: X
 
     board = [’O’, ’.’, ’X’, ’.’, ’X’, ’.’, ’.’, ’.’, ’.’]
-    Current player: O """
+    Current player: O
+    """
 
     # Call the function get_turn_number to determine the turn number.
     turn = get_current_turn_number(board)
@@ -109,7 +118,8 @@ def get_current_player(board):
 
 
 def play_turn(board, row, column):
-    """ The function play_turn attempts to play a turn, using a provided row and column, on the board
+    """
+    The function play_turn attempts to play a turn, using a provided row and column, on the board
 
      Arguments
      _________
@@ -121,11 +131,13 @@ def play_turn(board, row, column):
      Returns
      _______
      Output 1: a list representing the updated board. If the requested move was invalid, this will be identical to
-     Input 1
+               Input 1
+     Output 2: a bool representing if the turn was valid (True for a valid move, False for an invalid move)
 
      Notes
      _____
-     None """
+     None
+     """
 
     # Initialise the validity as false.
     validity = False
@@ -150,7 +162,8 @@ def play_turn(board, row, column):
 
 
 def check_draw(board):
-    """ The function check_draw determines if the game has ended in a draw
+    """
+    The function check_draw determines if the game has ended in a draw
 
      Arguments
      _________
@@ -162,7 +175,8 @@ def check_draw(board):
 
      Notes
      _____
-     None """
+     None
+     """
 
     # Initialise the draw as true.
     draw = True
@@ -198,8 +212,9 @@ def check_draw(board):
 
 
 def check_win(board):
-    """ The function check_win determines if there is a winning player based on the board, and if so which player has
-        won
+    """
+    The function check_win determines if there is a winning player based on the board, and if so which player has
+    won
 
      Arguments
      _________
@@ -212,7 +227,8 @@ def check_win(board):
 
      Notes
      _____
-     None """
+     The winning player is the first to get three in a row on the board
+     """
 
     # Initialise the win as false and the winner as none.
     win = False
@@ -253,7 +269,8 @@ def check_win(board):
 
 
 def play_game():
-    """ The function play_game plays the game from start to finish
+    """
+    The function play_game plays the game from start to finish
 
      Arguments
      _________
@@ -266,7 +283,8 @@ def play_game():
      Notes
      _____
      No inputs or outputs as this function handles user interaction and provides the game with a very basic form of user
-      interface"""
+    interface
+    """
 
     # Call the functions initialise_board, display_board, get_turn_number and get_turn_player to display the current
     # board, current turn and current player on each turn.
