@@ -34,7 +34,7 @@ def test_check_draw():
     assert (draw is True)
 
 
-def text_check_win():
+def test_check_win():
     board = ["X", "O", ".", ".", "X", "O", ".", ".", "X"]
     win, winner = check_win(board)
     assert (win is True)
